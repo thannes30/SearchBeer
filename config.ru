@@ -1,2 +1,2 @@
-require './app'
+require './inthepub'
 run Sinatra::Application
