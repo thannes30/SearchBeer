@@ -1,24 +1,21 @@
-Hello!
-====
-
-This is a demonstrator for [Sinatra](http://www.sinatrarb.com/) and [Twitter Bootstrap](http://getbootstrap.com/). 
-
-Use it as a boilerplate to start your own apps.
-
 Go!
 ===
 
-Download and run sinatra-bootstrap:
+Download and run inthepub:
 
-    git clone https://github.com/bootstrap-ruby/sinatra-bootstrap
+    git clone https://github.com/pauloconnor/inthepub
     
     cd sinatra-bootstrap
     bundle install             # To install sinatra
+   
+    Get an [Untappd API key](https://untappd.com/api/dashboard)
+
+    Then copy config.toml.example to config.toml and fill in the fields with your new details
     
-    bundle exec ruby app.rb    # To run the sample
+    bundle exec ruby inthepub.rb    # To run the sample
 	
 Then open [http://localhost:4567/](http://localhost:4567/)
 
 What's next?
 ============
-- Try the rerun gem to restart Sinatra automatically when you change source files: https://github.com/alexch/rerun
+Deploy it somewhere, and get a .pub domain!
