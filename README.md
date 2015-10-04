@@ -8,9 +8,9 @@ Download and run inthepub:
     cd sinatra-bootstrap
     bundle install             # To install sinatra
    
-    Get an [Untappd API key](https://untappd.com/api/dashboard)
+Get an [Untappd API key](https://untappd.com/api/dashboard)
 
-    Then copy config.toml.example to config.toml and fill in the fields with your new details
+Copy config.toml.example to config.toml and fill in the fields with your new details
     
     bundle exec ruby inthepub.rb    # To run the sample
 	
