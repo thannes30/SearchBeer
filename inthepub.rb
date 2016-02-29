@@ -8,24 +8,41 @@ require "toml"
 require "tilt/erb"
 
 get '/' do
-  @beers = beer_search
+  @title = "BEER SEARCH"
+  @beers = beer_search(params["coors"])
+
+  erb :home
+end
+
+get '/:beername' do
+  # @title = params["beername"].capitalize
+  @beers = beer_search(params["beername"])
+
+  erb :home
+end
+
+post '/beersearch' do
+  # @title = params["beername"].capitalize
+  @beers = beer_search(params["beername"])
 
   erb :home
 end
 
 get '/tim' do
-  is_he_there = tims_drinking
+  @title = "TIM'S BEERS"
+  @tims_beers = tims_drinking
 
-  erb :beer
+  erb :tims_beers
 end
 
 def beer_search(beername = "coors")
-
   if !@config
     @config  = TOML.load_file('config.toml')['untappd']
     raise 'Could not load credentials file at config.toml' if @config.nil? || @config.empty?
   end
-  uri = URI.parse("https://api.untappd.com/v4/user/checkins/#{beername}\?client_id\=#{@config['client_id']}\&client_secret\=#{@config['client_secret']}")
+  # uri = URI.parse("https://api.untappd.com/v4/user/checkins/#{beername}\?client_id\=#{@config['client_id']}\&client_secret\=#{@config['client_secret']}")
+  uri = URI.parse("https://api.untappd.com/v4/search/beer?q=coors&client_id=D85882678B68BF3D274FC5E5123604ED629A26C3&client_secret=3EBAB157BCCF41818FF11EE78EE364155CA410D5")
+
   http = Net::HTTP.new(uri.host, uri.port)
   http.use_ssl = true
   http.verify_mode = OpenSSL::SSL::VERIFY_NONE
@@ -63,18 +80,20 @@ def tims_drinking
   response = http.request(request)
   json =  JSON.parse(response.body)
 
-  @beers = []
+  @tim_beers = []
+  tims_beers_array = json["response"]["checkins"]["items"]
 
-  # @beer_style = json["response"]["checkins"]["items"][1]["beer"]["beer_style"]
-  # @beer_abv = json["response"]["checkins"]["items"][0]["beer"]["beer_abv"]
-  #@brewery = json["response"]["checkins"]["items"][2]["brewery"]["brewery_name"]
-
-  beers_array = json["response"]["checkins"]["items"]
-
-  beers_array.each do |beer|
-    beer = beer["beer"]
-    @beers << beer
+  tims_beers_array.each do |beer|
+    tims_beer = beer["beer"]
+    @tims_beers << tims_beer
   end
 
-  @beers
+  @tims_beers
 end
+
+
+
+
+# @beer_style = json["response"]["checkins"]["items"][1]["beer"]["beer_style"]
+  # @beer_abv = json["response"]["checkins"]["items"][0]["beer"]["beer_abv"]
+  #@brewery = json["response"]["checkins"]["items"][2]["brewery"]["brewery_name"]

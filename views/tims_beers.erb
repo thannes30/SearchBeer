@@ -1,0 +1,17 @@
+<div class="beer-list">
+  <ul>
+  <% if @tims_beers.count > 0 %>
+    <% @tims_beers.each do |beer| %>
+      <li>
+        <img src="<%= tims_beer["beer_label"] %>" alt="" height="100px" width="100px">
+        <h5 class="name"><%= tims_beer["beer_name"] %></h5>
+        <p class="attribute">Style: <%= tims_beer["beer_style"] %></p>
+        <p class="attribute">ABV: <%= tims_beer["beer_abv"] %></p>
+        <p class="attribute">Brewery: <%= tims_beer["brewery_name"] %></p>
+      </li>
+    <% end %>
+  <% else %>
+    <li>Sorry, but I guess Tim hasn't been drinking lately.</li>
+  <% end %>
+  </ul>
+</div>
