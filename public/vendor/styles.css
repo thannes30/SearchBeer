@@ -1,0 +1,52 @@
+  /* Custom, iPhone Retina */
+  @media only screen and (min-width : 300px){
+
+
+    .beer-list ul li {
+      display: inline-block;
+      width: 49%;
+      vertical-align: top;
+      margin-bottom:20px;
+    }
+    .name{
+      font-size:20px;
+    }
+    .attribute{
+      font-size:14px;
+      margin-bottom:0px;
+    }
+    .beer-list ul{
+      text-align:center;
+      padding-left: 0px;
+    }
+
+
+
+
+  }
+
+  /* Extra Small Devices, Phones */
+  @media only screen and (min-width : 480px){
+
+  }
+
+  /* Small Devices, Tablets */
+  @media only screen and (min-width : 768px){
+
+
+    .beer-list ul li {
+      display: inline-block;
+      width: 30%;
+    }
+
+  }
+
+  /* Medium Devices, Desktops */
+  @media only screen and (min-width : 992px){
+
+  }
+
+  /* Large Devices, Wide Screens */
+  @media only screen and (min-width : 1200px){
+
+  }

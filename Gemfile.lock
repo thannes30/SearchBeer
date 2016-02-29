@@ -4,14 +4,11 @@ GEM
     blankslate (2.1.2.4)
     parslet (1.5.0)
       blankslate (~> 2.0)
-    rack (1.6.0)
-    rack-protection (1.5.3)
-      rack
-    sinatra (1.4.6)
-      rack (~> 1.4)
-      rack-protection (~> 1.4)
-      tilt (>= 1.3, < 3)
-    tilt (2.0.1)
+    rack (1.6.4)
+    sinatra (1.1.0)
+      rack (~> 1.1)
+      tilt (~> 1.1)
+    tilt (1.4.1)
     toml (0.1.2)
       parslet (~> 1.5.0)
 
@@ -19,5 +16,8 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  sinatra
+  sinatra (= 1.1.0)
   toml
+
+BUNDLED WITH
+   1.10.6
