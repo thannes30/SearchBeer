@@ -15,14 +15,14 @@ get '/' do
 end
 
 get '/:beername' do
-  # @title = params["beername"].capitalize
+  @title = params["beername"].capitalize
   @beers = beer_search(params["beername"])
 
   erb :home
 end
 
 post '/beersearch' do
-  # @title = params["beername"].capitalize
+  @title = params["beername"].capitalize
   @beers = beer_search(params["beername"])
 
   erb :home
