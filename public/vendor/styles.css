@@ -19,6 +19,9 @@
       text-align:center;
       padding-left: 0px;
     }
+    form#search-beers {
+      margin-bottom: 30px;
+    }
 
 
 

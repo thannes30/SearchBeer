@@ -1,4 +1,5 @@
 <div class="beer-list">
+  <h4>FUCK YOU</h4>
   <ul>
   <% if @tims_beers.count > 0 %>
     <% @tims_beers.each do |beer| %>
@@ -7,7 +8,6 @@
         <h5 class="name"><%= tims_beer["beer_name"] %></h5>
         <p class="attribute">Style: <%= tims_beer["beer_style"] %></p>
         <p class="attribute">ABV: <%= tims_beer["beer_abv"] %></p>
-        <p class="attribute">Brewery: <%= tims_beer["brewery_name"] %></p>
       </li>
     <% end %>
   <% else %>
