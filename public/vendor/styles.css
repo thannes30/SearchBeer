@@ -22,6 +22,12 @@
     form#search-beers {
       margin-bottom: 30px;
     }
+    .logo > a{
+      color:#666;
+    }
+    h5 > a{
+      color:#666;
+    }
 
 
 
