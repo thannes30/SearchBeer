@@ -3,6 +3,9 @@
   <input type="submit" name="submit" value="search" />
 </form>
 
+<div class="search-term">
+  <p>Search results for "<%= @title %>"</p>
+</div>
 
 <div class="beer-list">
   <ul>
@@ -13,7 +16,6 @@
         <h5 class="name"><%= beer["beer_name"] %></h5>
         <p class="attribute">Style: <%= beer["beer_style"] %></p>
         <p class="attribute">ABV: <%= beer["beer_abv"] %></p>
-        <p class="attribute">Brewery: <%= beer["brewery_name"] %></p>
       </li>
     <% end %>
   <% else %>
