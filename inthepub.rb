@@ -36,6 +36,7 @@ get '/tim' do
 end
 
 def beer_search (beername = "coors")
+
   if !@config
     @config  = TOML.load_file('config.toml')['untappd']
     raise 'Could not load credentials file at config.toml' if @config.nil? || @config.empty?
@@ -66,6 +67,7 @@ end
 
 
 def tims_drinking
+
   if !@config
     @config  = TOML.load_file('config.toml')['untappd']
     raise 'Could not load credentials file at config.toml' if @config.nil? || @config.empty?
