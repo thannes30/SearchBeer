@@ -37,14 +37,13 @@ end
 
 def beer_search (beername = "coors")
 
-  if !@config
-    @config  = TOML.load_file('config.toml')['untappd']
-    raise 'Could not load credentials file at config.toml' if @config.nil? || @config.empty?
-  end
+  # if !@config
+  #   @config  = TOML.load_file('config.toml')['untappd']
+  #   raise 'Could not load credentials file at config.toml' if @config.nil? || @config.empty?
+  # end
 
   uri = URI.parse("https://api.untappd.com/v4/search/beer?q\=#{beername}\&client_id=D85882678B68BF3D274FC5E5123604ED629A26C3&client_secret=3EBAB157BCCF41818FF11EE78EE364155CA410D5")
   # uri = URI.parse("https://api.untappd.com/v4/search/beer?q\=#{beername}\&client_id\=#{@config['client_id']}\&client_secret\=#{@config['client_secret']}")
-  # uri = URI.parse("https://api.untappd.com/v4/search/beer?q=coors&client_id=D85882678B68BF3D274FC5E5123604ED629A26C3&client_secret=3EBAB157BCCF41818FF11EE78EE364155CA410D5")
 
   http = Net::HTTP.new(uri.host, uri.port)
   http.use_ssl = true
@@ -70,12 +69,14 @@ end
 
 def tims_drinking
 
-  if !@config
-    @config  = TOML.load_file('config.toml')['untappd']
-    raise 'Could not load credentials file at config.toml' if @config.nil? || @config.empty?
-  end
+  # if !@config
+  #   @config  = TOML.load_file('config.toml')['untappd']
+  #   raise 'Could not load credentials file at config.toml' if @config.nil? || @config.empty?
+  # end
+
   # uri = URI.parse("https://api.untappd.com/v4/user/checkins/#{@config['username']}\?client_id\=#{@config['client_id']}\&client_secret\=#{@config['client_secret']}")
   uri = URI.parse("https://api.untappd.com/v4/user/checkins/Thannes?client_id=DDC6AB7246427EE701B94538B908A2A5151A1932&client_secret=55E5B7550865E06B99329E7D1A19D04052499CF1")
+
   http = Net::HTTP.new(uri.host, uri.port)
   http.use_ssl = true
   http.verify_mode = OpenSSL::SSL::VERIFY_NONE
