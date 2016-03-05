@@ -74,7 +74,8 @@ def tims_drinking
     @config  = TOML.load_file('config.toml')['untappd']
     raise 'Could not load credentials file at config.toml' if @config.nil? || @config.empty?
   end
-  uri = URI.parse("https://api.untappd.com/v4/user/checkins/#{@config['username']}\?client_id\=#{@config['client_id']}\&client_secret\=#{@config['client_secret']}")
+  # uri = URI.parse("https://api.untappd.com/v4/user/checkins/#{@config['username']}\?client_id\=#{@config['client_id']}\&client_secret\=#{@config['client_secret']}")
+  uri = URI.parse("https://api.untappd.com/v4/user/checkins/Thannes?client_id=DDC6AB7246427EE701B94538B908A2A5151A1932&client_secret=55E5B7550865E06B99329E7D1A19D04052499CF1")
   http = Net::HTTP.new(uri.host, uri.port)
   http.use_ssl = true
   http.verify_mode = OpenSSL::SSL::VERIFY_NONE
