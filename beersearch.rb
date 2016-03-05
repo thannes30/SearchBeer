@@ -28,7 +28,7 @@ post '/beersearch' do
   erb :home
 end
 
-post '/tim_beers' do
+get '/tim_beers' do
   @title = "TIM'S BEERS"
   @tims_beers = tims_drinking
 
