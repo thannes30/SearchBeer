@@ -41,7 +41,9 @@ def beer_search (beername = "coors")
     @config  = TOML.load_file('config.toml')['untappd']
     raise 'Could not load credentials file at config.toml' if @config.nil? || @config.empty?
   end
-  uri = URI.parse("https://api.untappd.com/v4/search/beer?q\=#{beername}\&client_id\=#{@config['client_id']}\&client_secret\=#{@config['client_secret']}")
+
+  uri = URI.parse("https://api.untappd.com/v4/search/beer?q\=#{beername}\&client_id=D85882678B68BF3D274FC5E5123604ED629A26C3&client_secret=3EBAB157BCCF41818FF11EE78EE364155CA410D5")
+  # uri = URI.parse("https://api.untappd.com/v4/search/beer?q\=#{beername}\&client_id\=#{@config['client_id']}\&client_secret\=#{@config['client_secret']}")
   # uri = URI.parse("https://api.untappd.com/v4/search/beer?q=coors&client_id=D85882678B68BF3D274FC5E5123604ED629A26C3&client_secret=3EBAB157BCCF41818FF11EE78EE364155CA410D5")
 
   http = Net::HTTP.new(uri.host, uri.port)

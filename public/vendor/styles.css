@@ -28,6 +28,10 @@
     h5 > a{
       color:#666;
     }
+    .header > a{
+      float:right;
+      width:100%;
+    }
 
 
 
@@ -47,6 +51,15 @@
       display: inline-block;
       width: 30%;
     }
+    .header > h1, .header > h5{
+      width:60%;
+      display:inline-block;
+    }
+    .header > a{
+      width:30%;
+      display:inline-block;
+      text-align:right;
+    }
 
   }
 
@@ -57,5 +70,10 @@
 
   /* Large Devices, Wide Screens */
   @media only screen and (min-width : 1200px){
+
+
+    .beer-list ul li {
+      width: 24%;
+    }
 
   }
