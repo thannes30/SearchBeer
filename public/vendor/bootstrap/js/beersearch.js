@@ -4,4 +4,6 @@ $(document).ready(function(){
     $("p.search-term").hide();
   }
 
+  // $("p.search-term").text() == 'Search results for "BEER SEARCH"' ? $("p.search-term").hide() : $("p.search-term").show();
+
 })
